@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { evaluate } from 'mathjs';
 
 const Cal = () => {
     const [numDisplay, setNum] = useState('');
@@ -16,7 +15,7 @@ const Cal = () => {
 
     let evaluateExpression = () => {
         try {
-            const result = evaluate(numDisplay);
+            const result = eval(numDisplay);
             setAns(result.toString());
         } catch (error) {
             console.error("Invalid expression", error);
